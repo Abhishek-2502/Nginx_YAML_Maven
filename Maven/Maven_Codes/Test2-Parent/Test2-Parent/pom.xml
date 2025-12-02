@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.parent</groupId>
+    <artifactId>Test2-Parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>Test2-Child</module>
+        <module>Test2-Child2</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+<!--    In dependencies, we don;t have to declare dependency in child's pom.xml. Child will automatically inherit.-->
+<!--    <dependencies>-->
+<!--        <dependency>-->
+<!--            <groupId>com.google.code.gson</groupId>-->
+<!--            <artifactId>gson</artifactId>-->
+<!--            <version>2.10.1</version>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
+
+<!--    In dependency Management, we have to declare dependency in child's pom.xml. We need not to declare its version and scope.-->
+    <dependencyManagement>
+            <dependencies>
+                <dependency>
+                    <groupId>com.google.code.gson</groupId>
+                    <artifactId>gson</artifactId>
+                    <version>2.10.1</version>
+                </dependency>
+            </dependencies>
+    </dependencyManagement>
+
+</project>
